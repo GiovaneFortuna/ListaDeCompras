@@ -35,3 +35,24 @@ function adicionarCompras(){
 const btAdicionar = document.getElementById('btAdicionar');
 btAdicionar.addEventListener("click", adicionarCompras)
 
+function excluirCompras(){
+ 
+  if(lista == ""){
+    outAlerta.textContent = "não há mais itens para remover";
+    return;
+  }
+  
+  lista.pop();
+  
+  let itens = "";
+  
+ for(let i = 0; i < lista.length; i++){
+    itens += (i + 1) + " . " + lista[i] + "\n";
+  }
+  
+    outLista.textContent = itens;
+  inLista.value= ""; 
+
+}
+let btExcluir = document.getElementById("btExcluir");
+btExcluir.addEventListener("click",excluirCompras );
